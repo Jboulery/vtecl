@@ -1,0 +1,15 @@
+figcaption{
+	text-align: center;
+	color: black;
+	font-style: italic;
+	font-size: 14px;
+}
+
+img{
+	max-width: 750px;
+}
+
+#tweets_darshut_img{
+	max-height:600px;
+	width: auto;
+}
