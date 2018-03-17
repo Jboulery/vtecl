@@ -109,10 +109,10 @@
               <div class="subheading mb-3">Récent et très controverse</div>
               <p>A l'heure de présenter les résultats issues de cette veille, une réponse à cette question me paraît plus qu'indispensable pour débuter.</p>
               <p>S'attaquer à un sujet spécifique lors d'une veille implique une raréfaction des sources d'information. De fait, la release très récente de l'application FakeApp (Décembre 2017) et ses spécificités techniques impliquent qu'il est vraiment peu surprenant que j'ai été le premier et pendant un bon moment le seul à associer #DeepLearning à #FaceSwap...</p>
-              <p>La possibilité donnée par le MOS Nouvelles Technologies de l'Information et de la Communication d'approfondir un sujet en particulier m'a alors paru un bon moyen de passer du temps à essayer de comprendre le fonctionnement et les répercussions attendues par cette release que d'aucuns qualifient tout simplement de "révolution du fake". Mon attention s'est portée sur FakeApp pour deux principales raisons :
+              <p>La possibilité donnée par le MOS Nouvelles Technologies de l'Information et de la Communication d'approfondir un sujet en particulier m'a paru un bon moyen de passer du temps à essayer de comprendre le fonctionnement et les répercussions attendues de cette release que d'aucuns qualifient tout simplement de "révolution du fake". Mon attention s'est portée sur FakeApp pour deux principales raisons :
               	<ul>
               		<li>La croissance rapide du nombre d'utilisateurs et de la communauté autour du projet originellement nommé d'après son créateur "deepfakes"</li>
-              		<li>La controverse immédiate sur les utilisations malignes dans lesquelles FakeApp trouve son origine, à savoir plus précisément la création de fake contenu à caractère pornographique.</li>
+              		<li>La controverse immédiate sur les utilisations malignes dans lesquelles FakeApp trouve son origine, à savoir plus précisément la création de fakes à caractère pornographique.</li>
               	</ul>
               	Ces deux points sont illustrés ci-dessous par des chiffres datant de seulement quelques semaines après la release:
               </p>
@@ -139,7 +139,7 @@
               <div class="subheading mb-3">Base du fonctionnement de l'application</div>
               <p>Cette partie n'a pas vocation à faire comprendre au lecteur le fonctionnement en détail d'un réseau de neurones car ce n'est pas le coeur du sujet ici traité. Vous trouverez donc ci-dessous simplement des éléments de compréhension sur l'application des réseaux de neurones au traitement d'images tel que le fait FakeApp. Pour les curieux, vous pourrez trouver les travaux de mes collègues François Paugam et Alexandre Popov très bien fournis et détaillés à ce propos:
 					<ul>
-						<li>Alexandre Popov : <a href="https://docs.google.com/presentation/d/1Rc-2TPLePmazuuiW65CXXnXTDpDW22TTT_gjK90tvVI/edit?usp=sharing">Deep Learning appliqué au traitement d'images</a> - Site internet : En construction - Twitter : <a href="https://twitter.com/APop41670853">@APop41670853</a></li>
+						<li>Alexandre Popov : <a href="https://docs.google.com/presentation/d/1Rc-2TPLePmazuuiW65CXXnXTDpDW22TTT_gjK90tvVI/edit?usp=sharing">Deep Learning appliqué au traitement d'images</a> - Site internet : <a href="https://alexandrospopov.github.io/rechercheBibliographiqueDeep/index.html">https://alexandrospopov.github.io/</a> - Twitter : <a href="https://twitter.com/APop41670853">@APop41670853</a></li>
 						<li>François Paugam : <a href="https://docs.google.com/presentation/d/16GSVmvPO-55EcUWf4OQXvmp3SWb8YHenJNAFfIgYdZs/edit?usp=sharing">Generative Adversarial Networks, quand les machines imaginent</a> - Site internet : <a href="https://francoispgm.github.io/">https://francoispgm.github.io/</a> - Twitter : <a href="https://twitter.com/francois_vtecl">@francois_vtecl</a></li>
 					</ul>
 				Au cours de ma veille, j'ai également eu l'occasion de visionner plusieurs vidéos extrêmement bien faites dont les deux suivantes réalisées par 3Blue1Brown :
@@ -156,12 +156,12 @@
 						<figcaption>Gradient descent, how neural networks learn | Chapter 2, deep learning - 3Blue1Brown</figcaption>
 					</figure>
 				</div> 
-				<p>Dans la suite, les images présentées sont extraites du cours de Fei-fei LI, Andrej Karpathy et Justin Johson.<br>
+				<p>Dans la suite de cette partie, les images présentées sont extraites du cours de Fei-fei LI, Andrej Karpathy et Justin Johson.<br>
 				Un réseau de neurone présente de manière générale :
 				<ul>
-					<li>Une couche d'entrée : Récupère les paramètres d'entrées (informations sur les pixels d'une image par exemple)</li>
-					<li>Une ou plusieurs couches "cachées" : Effectue des calculs sur les éléments donnés en entrée</li>
-					<li>Une couche de sortie : Renvoie une classe (ou label) sensée caractérisée les paramètres d'entrée.</li>
+					<li>Une couche d'entrée : récupère les paramètres d'entrées (informations sur les pixels d'une image par exemple)</li>
+					<li>Une ou plusieurs couches "cachées" : effectue des calculs sur les éléments donnés en entrée</li>
+					<li>Une couche de sortie : renvoie une classe (ou label) sensée caractériser les paramètres d'entrée.</li>
 				</ul>
 				<div class="row justify-content-center">
 					<figure>
@@ -191,13 +191,13 @@
 				</ul>
 				On peut imaginer une division du type 80% des données seront utilisées pour l'entraînement et 20% pour le test.
 				</p>
-				<p>une fois cette division effectuée, on choisit (de manière arbitraire disons le) une architecture pour le réseau. A savoir que plus nombreux seront les couches et les neurones, plus lourds seront les calculs à faire. On peut tout de même faire de l'heuristique pour déterminer un nombre adéquat de couches (cf première vidéo de 3Blue1Brown).</p>
+				<p>une fois cette division effectuée, on choisit (de manière quasi arbitraire) une architecture pour le réseau. A savoir que plus nombreux seront les couches et les neurones, plus lourds seront les calculs à faire. On peut tout de même faire de l'heuristique pour déterminer un nombre adéquat de couches (cf première vidéo de 3Blue1Brown).</p>
 				<p>L'étape d'entraînement consiste à fournir les images des données d'entraînement en entrée du réseau. Chaque image est envoyée à la couche d'entrée du réseau de neurones de manière que chaque noeud (=neurone) de la couche d'entrée contient les informations de niveaux de gris d'un pixel de l'image donnée. Ces niveaux de gris sont alors envoyés aux couches cachées du réseau qui vont affecter à chacun des pondérations suivant un modèle linéaire. Elles renvoient après calculs les poids obtenus à la couche de sortie qui en déduit la réponse à afficher.
-				Cette réponse est alors comparée au label correspondant à l'image et si erreur il y a, on renvoie celle-ci vers le début du réseau (cf fonction loss et backward propagation) afin d'effectuer les modifications sur les calculs à exécuter.
+				Cette réponse est alors comparée au label correspondant à l'image et si erreur il y a, on renvoie celle-ci vers le début du réseau (cf <a href="https://fr.wikipedia.org/wiki/Erreur_quadratique_moyenne">MSELoss function</a> et <a href="https://fr.wikipedia.org/wiki/R%C3%A9tropropagation_du_gradient">Backward propagation</a>) afin d'effectuer les modifications sur les calculs à exécuter.
 				</p>
 				<p>Lorsque les résultats sur les données d'entraînement sont satisfaisants, on demande au réseau de neurones d'effectuer des prédictions sur le jeu de test. Il n'aura alors plus la possibilité de comparer son erreur en sortie. Ces données lui étant inconnues, la précision et le "recall" obtenus feront état de la performance de l'algorithme.</p>
 				<div class="subheading mb-3">Spécificité de FakeApp</div>
-				<p>L'application FakeApp est basée sur des réseaux de neurones dits de convolution et de déconvolution. Pour en savoir plus, référez-vous aux ressources ci-dessus. Pour faire simple, le réseau de convolution (ou encoder) est chargé d'extraire les caractéristiques des visages pour chaque personne. Le réseau de déconvolution (ou decoder) va quant à lui essayer de reconstruire le visage de la personne à partir des caractéristiques extraites par l'encoder. L'algorithme sera considéré comme suffisamment entraîné lorsque le decoder parviendra à reconstituer de manière satisfaisante le visage de la personne.</p>
+				<p>L'application FakeApp est basée sur des réseaux de neurones dits de convolution et de déconvolution. Pour en savoir plus, référez-vous aux ressources de mes collègues mentionnées ci-dessus. Pour faire simple, le réseau de convolution (ou encoder) est chargé d'extraire les caractéristiques des visages pour chaque personne. Le réseau de déconvolution (ou decoder) va quant à lui essayer de reconstruire le visage de la personne à partir des caractéristiques extraites par l'encoder. L'algorithme sera considéré comme suffisamment entraîné lorsque le decoder parviendra à reconstituer de manière satisfaisante le visage de la personne.</p>
 				<p>A savoir que FakeApp se base sur TensorFlow, outil OpenSource de Machine Learning développé par Google.</p>
             </div>
           </div>
@@ -214,7 +214,7 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Quelques exemples pour commencer</h3>
               <div class="subheading mb-3">Nicolas Cage - Star du fake</div>
-              <p>Avant de rentrer dans le vif du sujet, une petite mise en bouche me paraît faire sens. Voici donc quelques réalisations obtenues à partir de l'utilisation de FakeApp, application destinée à la création de fake vidéos. Il faut savoir que Nicolas Cage est rapidement devenu la célébrité dont le visage a été le plus utilisé dans la création de fakes. Ces fakes sont à vocation parodiques et leur étrangeté autant que leur réalisme prêtent effectivement à rire.</p>
+              <p>Avant de rentrer dans le vif du sujet, une petite mise en bouche paraît faire sens. Voici donc quelques réalisations obtenues à partir de l'utilisation de FakeApp, application destinée à la création de fake vidéos. Il faut savoir que Nicolas Cage est rapidement devenu la célébrité dont le visage a été le plus utilisé dans la création de fakes. Ces fakes sont à vocation parodique et leur étrangeté autant que leur réalisme prêtent effectivement à rire.</p>
               <div class="row justify-content-center">
               	<figure style="margin: 10px">
               		<iframe width="640" height="420" src="https://www.youtube.com/embed/UwiagqaX4fA"></iframe>
@@ -232,9 +232,9 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Fonctionnement de l'application</h3>
               <div class="subheading mb-3">Etape 0 - Rassembler des images des deux personnes dont les visages sont à intervertir</div>
-              <p>Cela paraît évident mais il est naturel de le préciser. L'étape préalable à l'utilisation de l'application est de constituer deux datasets d'images des deux personnes que nous appellerons pour la suite personne A et personne B. Après retour d'expérience, il semble que quelques centaines d'images soient nécessaires afin d'obtenir un bon résultat. Plus les images sont variées en termes de luminosité, exposition et expressions du visage et plus l'algorithme apprendra efficacement.</p>
+              <p>Cela paraît évident mais il est naturel de le préciser. L'étape préalable à l'utilisation de l'application est de constituer un dataset d'images pour chacune des deux personnes que nous appellerons pour la suite personne A et personne B. Après retour d'expérience, il semble que quelques centaines d'images soient nécessaires afin d'obtenir un bon résultat. Plus les images sont variées en termes de luminosité, exposition et expressions du visage et plus l'algorithme apprendra efficacement.</p>
               <p>Une stratégie classique afin d'obtenir un grand nombre d'images rapidement est de scinder des vidéos frame par frame. Au rythme de quelques images par seconde, il est aisé d'atteindre les centaines d'images nécessaires.</p>
-              <p>Pour la suite, j'ai souhaité pour ma part effectuer le remplacement du visage de Vincent Cassel lors d'une interview par celui de Franck Debouck, directeur de l'Ecole Centrale de Lyon. La vidéo obtenue en fin de compte ne sera pas postée sur YouTube par respect pour le droit à l'image de ces deux personnes publiques mais vous pouvez m'en faire la demande par mail. Les images présentées ci-dessous sont librement accessibles sur internet (YouTube).</p>
+              <p>Pour la suite, j'ai souhaité pour ma part effectuer le remplacement du visage de Vincent Cassel lors d'une interview par celui de Franck Debouck, directeur de l'Ecole Centrale de Lyon. La vidéo obtenue en fin de compte ne sera pas postée sur YouTube par respect pour le droit à l'image de ces deux personnes publiques mais vous pouvez m'en faire la demande par mail (une démonstration ayant été faite lors de la présentation du 16 février 2018). Les images présentées ci-dessous sont librement accessibles sur internet (YouTube).</p>
               	<div class="row justify-content-center">
 					<figure>
 						<img src="img/debouck_dataset.jpg" alt="Extrait du dataset constitué pour Franck Debouck">
@@ -247,16 +247,16 @@
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
               <div class="subheading mb-3">Etape 1 - Extraction des visages des images du dataset</div>
-              <p>Chaque image du dataset contient son lot d'éléments pouvant perturber l'étape d'apprentissage de l'algorithme. Pour comprendre, imaginons que l'on ait constituer une base de données d'image pour la personne A à partir d'une vidéo. Imaginons également que sur cette vidéo, il y a un arbre en arrière-plan qui apparaît sur chaque frame. Si on laisse les choses dans cet état, l'algorithme va naturellement penser que l'arbre est un élément constitutif de la personne dont il veut extraire les caractéristiques. Cela impliquera que cet arbre sera considérer lors de l'étape de reconstruction du visage et sera donc très nuisible...</p>
+              <p>Chaque image du dataset contient son lot d'éléments pouvant perturber l'étape d'apprentissage de l'algorithme. Pour comprendre, imaginons que l'on ait constitué une base de données d'images pour la personne A à partir d'une vidéo. Imaginons également que sur cette vidéo, il y a un arbre en arrière-plan qui apparaît sur chaque frame. Si on laisse les choses dans cet état, l'algorithme va naturellement penser que l'arbre est un élément constitutif de la personne dont il veut extraire les caractéristiques. Cela impliquera que cet arbre sera considéré lors de l'étape de reconstruction du visage et sera donc très nuisible...</p>
               <p>Il convient donc de resserrer l'image autour du visage de la personne en annulant l'angle de prise de vue de sorte que l'axe des yeux de la personne soit horizontal. Cette étape est entièrement automatisée mise à part vérification du résultat.</p>
-              <p>Pour réaliser cela, FakeApp se base sur OpenCV et en particulier sur la fonction "Histogram Of Oriented Gradients" qui permet de repérer un visage dans une image en regardant le flux de lumière dans cette image. Un pattern générique a en effet été calculé à partir de millier de photos de visages. Si un pattern semblable est détecté, on peut considérer qu'il s'agit bien de la face d'une personne.</p>
+              <p>Pour réaliser cela, FakeApp se base sur OpenCV et en particulier sur la fonction "Histogram Of Oriented Gradients" qui permet de repérer un visage dans une image en regardant le flux de lumière dans cette image. Un pattern générique a préalablement été calculé à partir de milliers de photos de visages. Si un pattern semblable est détecté, on peut considérer qu'il s'agit bien de la face d'une personne.</p>
               	<div class="row justify-content-center">
 					<figure>
 						<img src="img/face_pattern.png" alt="Pattern générique utilisé par OpenCV">
 						<figcaption>Pattern générique utilisé par OpenCV</figcaption>
 					</figure>
 				</div>
-				<p>FakeApp va donc passer en revue toutes les images du dataset et extraire de chacune d'entre elles une image centrée et éventuellement tournée du visage de la personne ciblée. Deux formats sont supportées par la version 1.11 de l'application : png et jpg. Le paramètre "Mult faces" qui permet de repérer plusieurs visages sur une image lorsqu'il vaut "true" est pour le moment assez peu concluant et on préfèrera utiliser des images où la personne est seule.</p>
+				<p>FakeApp va donc passer en revue toutes les images du dataset et extraire de chacune d'entre elles une image centrée et éventuellement tournée du visage de la personne ciblée. Deux formats sont supportés par la version 1.11 de l'application : png et jpg. Le paramètre "Mult faces" qui permet de repérer plusieurs visages sur une image lorsqu'il vaut "true" est pour le moment assez peu concluant et on préfèrera utiliser des images où la personne est seule.</p>
             	<div class="row justify-content-center">
 					<figure>
 						<img src="img/debouck_extract.png" alt="Phase d'extraction du visage">
@@ -275,7 +275,7 @@
             <div class="resume-content mr-auto">
               <div class="subheading mb-3">Etape 2 - Entraînement du modèle</div>
               <p>Une fois les visages des deux personnes à intervertir extraites, le modèle peut être entraîné. Dans le cadre d'une transformation A vers B, on souhaite que l'algorithme soit capable de reconstruire le visage de la personne B à partir des caractéristiques du visage de la personne A sur une certaine image.</p>
-              <p>Comme mentionné dans la partie expliquant le fonctionnement d'un réseau de neurone et des spécificités de FakeApp, l'application se sert en fait de deux réseaux de neurones travaillant en parallèle.</p>
+              <p>Comme mentionné dans la partie expliquant le fonctionnement d'un réseau de neurones et des spécificités de FakeApp, l'application se sert en fait de deux réseaux de neurones travaillant en parallèle.</p>
               	<div class="row justify-content-center">
 					<figure>
 						<img src="img/training_step.png" alt="Schéma de fonctionnement de l'étape d'entraînement">
@@ -283,7 +283,7 @@
 					</figure>
 				</div>
 				<p>Les encoders sont chargés, pour chaque image du dataset, d'extraire les caractéristiques du visage de la personne (d'où l'importance d'avoir diverses expositions, luminosités et expressions pour enrichir le nombre de ces caractéristiques). Ces caractéristiques sont ensuite transmises aux decoders qui vont essayer de reconstruire le visage de la personne à partir de ces caractéristiques. Il est important de noter ici que chaque paire encoder / decoder travaille sur une seule personne uniquement. Il n'est pas encore question d'échanger les visages mais simplement d'apprendre à les reconstruire de manière satisfaisante.</p>
-				<p>Le decoder A (resp. B) est donc chargé de reconstruire le visage de la personne A (resp. B) à partir de caractéristiques visages extraites par un encoder. On estime que le decoder A (resp. B) est entraîné si l'erreur commise (au sens de la RMSE) dans la reconstruction d'une image par celui-ci est inférieure à 2% par rapport à l'image donnée en entrée de l'encoder (voire 1% si la résolution est haute).</p>
+				<p>Le decoder A (resp. B) va donc reconstruire le visage de la personne A (resp. B) à partir de caractéristiques visages extraites par un encoder. On estime que le decoder A (resp. B) est entraîné si l'erreur commise (au sens de la RMSE) dans la reconstruction d'une image par celui-ci est inférieure à 2% par rapport à l'image donnée en entrée de l'encoder (voire 1% si la résolution est haute).</p>
 				<p>Comme vous l'aurez certainement compris, pour invertir les visages de A vers B, il suffit alors de transmettre les caractéristiques extraites par l'encoder A au decoder B qui sait reconstruire le visage de la personne B. Une fonction de prévisualisation permet d'observer le travail des deux réseaux de neurones agissant en parallèle.</p>
 				<div class="row justify-content-center">
 					<figure>
@@ -324,14 +324,14 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">La génération de fakes à portée de tous</h3>
               <div class="subheading mb-3">Des origines peu flatteuses...</div>
-              <p>Il y a encore peu, la génération de fake vidéos était réservée à des experts en traitement d'images, dotée de machines dont les performances étaient de manière certaines supérieures à l'ordinateur de tout un chacun. La release de FakeApp met cette capacité de création entre les mains du plus grand nombre. Cette tendance d'universalisation du procédé est d'ailleurs montrée par les nouvelles versions de FakeApp qui ne demandent même plus à créer un dataset d'images mais seulement deux vidéos au format <em>.mp4</em>.</p>
+              <p>Il y a encore peu, la génération de fake vidéos était réservée à des experts en traitement d'images, dotée de machines dont les performances étaient de manière certaine supérieures à l'ordinateur de tout un chacun. La release de FakeApp met cette capacité de création entre les mains du plus grand nombre. Cette tendance d'universalisation du procédé est d'ailleurs montrée par les nouvelles versions de FakeApp qui ne demandent même plus à créer un dataset d'images en amont du traitement mais seulement d'avoir à disposition deux vidéos au format <em>.mp4</em>.</p>
               	<div class="row justify-content-center">
 					<figure>
 						<img src="img/fake_app_21.jpg" alt="Version 2.1 de FakeApp">
 						<figcaption>Version 2.1 de FakeApp (source : <a href="http://www.bbc.com/news/technology-42975101">http://www.bbc.com/news/technology-42975101</a>)</figcaption>
 					</figure>
 				</div>
-				<p>Si l'application a rapidement fait parler d'elle, c'est certainement car elle fut originellement et massivement utilisée pour la création de fake vidéos à caractère pornographique de célébrités. Des milliers de vidéos X furent rapidement créées utilisant le visage de personalités à leur insu :
+				<p>Si l'application a rapidement fait parler d'elle, c'est certainement car elle fut originellement et massivement utilisée pour la création de fake vidéos à caractère pornographique de célébrités. Des milliers de vidéos X furent rapidement créées utilisant le visage de personnalités à leur insu :
 				<ul>
 					<li>Gal Gadot (vidéo initiale postée par deepfakes, créateur de l'algorithme)</li>
 					<li>Maisie Williams</li>
@@ -351,7 +351,7 @@
 					</figure>
 				</div>
 
-				<p>Bien évidemment, la réaction de Reddit, Twitter et également des plateformes de films pour adultes ont immédiatement réagi en bannissant utilisateurs et vidéos liés à cette utilisation peu vertueuse de l'application.</p>
+				<p>Bien évidemment, la réaction de Reddit, Twitter et également des plateformes de films pour adultes ne s'est pas faite attendre. Ces acteurs ont immédiatement réagi en bannissant utilisateurs et vidéos liés à cette utilisation peu vertueuse de l'application.</p>
 				<div class="row justify-content-center">
 					<figure>
 						<img src="img/ban_reddit.png" alt="Bannissement du subreddit deepfakes">
@@ -364,10 +364,30 @@
 				</div>
 				<p>Dans un <a href="https://www.nytimes.com/2018/03/04/technology/fake-videos-deepfakes.html">article du New York Times</a>, le créateur de l'application s'exprime sur ses motivations originelles et sur l'éthique du projet : <br>
 					<q style="color: black; font-style: italic;">I’ve given it a lot of thought,” he said, “and ultimately I’ve decided I don’t think it’s right to condemn the technology itself — which can of course be used for many purposes, good and bad.</q>
-				</p>
-				Selon lui, le problème n'est donc pas sa création mais bien le fait que son utilisation est uniquement limitée par l'imagination humaine et par conséquent sans limite que ce soit pour le bien ou pour le vice. En mettant cette technologie à portée de tous, l'auteur veut, de son propre aveu, permettre à tout un chacun de porter en images le fruit de son imagination, le tout sans aucun coût. Il est évident que les fantasmes en font partie et c'est bien ce qui pousse aujourd'hui à se demander si une boîte de Pandore n'a pas été ouverte.
-            </div>
+        </p>
+        <p>
+          Selon lui, le problème n'est donc pas sa création mais bien le fait que son utilisation est uniquement limitée par l'imagination humaine et par conséquent sans limite que ce soit pour le bien ou pour le vice. En mettant cette technologie à portée de tous, l'auteur veut, de son propre aveu, permettre à tout un chacun de porter en images le fruit de son imagination, le tout sans aucun coût. Il est évident que les fantasmes en font partie et c'est bien ce qui pousse aujourd'hui à se demander si une boîte de Pandore n'a pas été ouverte.
+        </p>   
+        <p>
+          Il est important de noter que dans le contexte actuel où la lutte contre les fake news a été déclarée par les géants du web (Facebook en tête), la release de cette application doit venir renforcer l'esprit critique des citoyens. En effet si actuellement ces fakes sont pour la plupart relativement faciles à identifier, la qualité de finition de quelques-uns laissent penser que bientôt seuls des experts en traitement d'images seront capables de les déceler. Le fait est qu'il existe un point de rupture entre ce nombre 
+          d'experts capables de discerner le vrai du faux et un volume de création de fakes potentiellement immense (chacun en a la capacité). Il est évident que la rapidité de propagation de l'information risque de devenir de plus en plus une question de société omniprésente. Les fakes vidéos portent la capacité de nuisance de leurs créateurs à un degré encore inégalé. 
+        </p>
+        <p>On peut effectivement facilement imaginer leur impact sur une campagne électoral ou sur le cours d'une action où les rumeurs ont un effet quasiment immédiat sur le public, souvent en défaveur des personnes ciblées.</p>
+          <div class="row justify-content-center">
+            <figure style="margin: 10px">
+              <iframe width="640" height="420" src="https://www.youtube.com/embed/dkoi7sZvWiU"></iframe>
+              <figcaption>AI-generated "real fake" video of Barack Obama - Analytics India Magazine</figcaption>
+            </figure>
           </div>
+          <p>Le principe de FakeApp est applicable à la voix et pourrait très bien être imaginé fonctionnant en temps réel. Un utilisateur sur r/deepfakes avant sa fermeture disait très justement "If everything is real then nothing is real". Cette situation potentiellement dangereuse pour l'image des personnalités publiques a d'ores et déjà conduit plusieurs acteurs à réagir pour créer directement des outils performants capables de détecter ce type de vidéos au sein du web.</p>
+          <p>
+            On peut mentionner le site Gfycat, normalement spécialisé dans la création et l'hébergement de <em>.gif</em> qui a annoncé <a href="https://www.wired.com/story/gfycat-artificial-intelligence-deepfakes/">avoir créé une intelligence artificielle pour lutter contre les "deepfakes" vidéos</a>. Malheureusement, l'article conclut toutefois sur une note pessimiste et le fait que ces outils ne sont pas totalement efficaces citant Hany Farid : "We're decades away from having forensic technology that you can unleash on a Pornhub or a Reddit and conclusively tell a real from a fake...".
+            Une première bataille IA vs IA est donc peut-être sur le point d'émerger tant la manipulation de vidéos va devenir commune.
+          </p>
+          <p>Soutenir le développement de tels outils est nécessaire. On a effectivement pour l'instant uniquement parlé de victimes célèbres mais la vérité est que tout un chacun est une potentielle victime. La quantité de données personnelles postées par une majorité de personnes sur les réseaux sociaux (Facebook, Twitter, Google+, YouTube, Instagram, etc...) font qu'il est aisé pour quasiment n'importe qui de recueillir un échantillon d'images suffisant pour entraîner un modèle et ainsi d'obtenir un résultat satisfaisant avec FakeApp !</p>
+          <p><strong>On pourrait même dans une certaine mesure à remettre en cause la place du visage en tant que donnée biométrique tant celle-ci est finalement exposée à tous et désormais exploitable par le plus grand nombre.</strong></p>
+          <p>Ce dernier point est d'ailleurs intéressant car il convient de s'interroger sur les données biométriques ne pouvant être dupliquées ou exploitées. Récemment, <a href="http://www.europe1.fr/emissions/le-journal-du-monde/inde-un-milliard-de-donnees-personnelles-biometriques-piratees-pour-la-bonne-cause-3542726">l'Inde a été victime d'une attaque visant à montrer la perméabilité de leur système de stockage de données biométriques</a>. Résultat ? Les données personnelles de près d'un milliard de personnes récupérées. Fort heureusement cette attaque était menée avec bienveillance.</p>
+        </div>
         </div>
       </section>
 
